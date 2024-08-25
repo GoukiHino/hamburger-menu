@@ -1,0 +1,60 @@
+@use "../setting/variables" as v;
+@use "../setting/mixin" as m;
+
+.header {
+  box-shadow: 1px 1px 6px v.$gray-color;
+
+  @include m.responsive(sp) {
+    height: calc(v.$header-height - 1.5rem);
+  }
+
+  @include m.responsive(tb) {
+  }
+
+  @include m.responsive(pc) {
+    height: v.$header-height;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  &_logo {
+    flex-grow: 1;
+    font-size: 3rem;
+
+    @include m.responsive(sp) {
+    }
+
+    @include m.responsive(tb) {
+    }
+
+    @include m.responsive(pc) {
+      letter-spacing: .25rem;
+    }
+  }
+
+  &_nav {
+
+    @include m.responsive(sp) {
+      display: none;
+    }
+
+    @include m.responsive(tb) {
+    }
+
+    @include m.responsive(pc) {
+      display: block;
+    }
+  }
+
+  &_list {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &_link {
+    letter-spacing: .25rem;
+  }
+}

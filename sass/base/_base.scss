@@ -1,0 +1,21 @@
+@use "../setting/variables" as v;
+@use "../setting/mixin" as m;
+
+html {
+  font-family: v.$font-family;
+  font-size: v.$font-size;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: v.$black-color;
+  background-color: v.$white-color;
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}

@@ -1,0 +1,16 @@
+@use "../setting/variables" as v;
+@use "../setting/mixin" as m;
+
+.footer {
+  height: v.$footer-height;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .copyright {
+    font-size: 1rem;
+  }
+}

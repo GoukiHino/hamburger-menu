@@ -1,0 +1,19 @@
+@use "../../setting/mixin" as m;
+
+.content {
+
+  @include m.responsive(sp) {
+    padding: 3rem 0;
+  }
+
+  @include m.responsive(tb) {
+  }
+
+  @include m.responsive(pc) {
+    padding: 6rem 0;
+  }
+
+  &_title {
+    @include m.title;
+  }
+}

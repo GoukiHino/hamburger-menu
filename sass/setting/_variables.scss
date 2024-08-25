@@ -1,0 +1,21 @@
+// Font
+$font-family: "游明朝体", "Yu Mincho", YuMincho, serif;
+$font-size: 62.5%;
+
+// Color
+$white-color: #fff;
+$black-color: #111;
+$gray-color: #999;
+
+// Breakpoint
+$breakpoints: (
+        "sp": "(min-width: 0px)",
+        "tb": "(min-width: 600px)",
+        "pc": "(min-width: 1200px)"
+);
+
+// Header
+$header-height: 75px;
+
+// Footer
+$footer-height: 45px;

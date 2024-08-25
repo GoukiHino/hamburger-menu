@@ -1,0 +1,126 @@
+@use "../setting/variables" as v;
+@use "../setting/mixin" as m;
+
+.hamburger {
+
+  &_btn {
+    position: relative;
+    height: calc(v.$header-height - 1.5rem);
+    width: calc(v.$header-height - 1.5rem);
+    z-index: 999;
+
+    @include m.responsive(sp) {
+      display: block;
+    }
+
+    @include m.responsive(tb) {
+    }
+
+    @include m.responsive(pc) {
+      display: none;
+    }
+
+    span {
+      position: absolute;
+      right: 50%;
+      width: calc(v.$header-height - 3rem);
+      border: 1px solid v.$black-color;
+      transform: translateX(50%);
+      transition: all .3s;
+
+      &:nth-child(1) {
+        top: 25%;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+      }
+
+      &:nth-child(3) {
+        top: 75%;
+      }
+    }
+
+    &.active span {
+
+      &:nth-child(1) {
+        top: 50%;
+        transform: translateX(50%) rotate(-45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateX(50%) rotate(45deg);
+      }
+    }
+  }
+
+  &_nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: v.$white-color;
+    animation: fadeout .3s;
+
+    &.active {
+      display: block;
+      animation: fadein .3s;
+      z-index: 998;
+    }
+  }
+
+  &_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 100%;
+  }
+
+  &_link {
+    font-size: 2rem;
+    letter-spacing: .25rem;
+  }
+
+  @keyframes fadein {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+
+    1% {
+      display: block;
+      opacity: 0;
+    }
+
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeout {
+    0% {
+      display: block;
+      opacity: 1;
+    }
+
+    99% {
+      display: none;
+      opacity: 0;
+    }
+
+    100% {
+      display: none;
+      opacity: 0;
+    }
+  }
+}

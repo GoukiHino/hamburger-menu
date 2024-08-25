@@ -1,0 +1,46 @@
+@use "variables" as v;
+
+@mixin responsive($breakpoint) {
+  @media screen and (map-get(v.$breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+@mixin title {
+  position: relative;
+  text-align: center;
+
+  @include responsive(sp) {
+    font-size: 2.5rem;
+    margin-bottom: 3.75rem;
+  }
+
+  @include responsive(tb) {
+  }
+
+  @include responsive(pc) {
+    font-size: 3rem;
+    margin-bottom: 4.5rem;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: 50%;
+    border: 1px solid v.$black-color;
+    transform: translateX(50%);
+
+    @include responsive(sp) {
+      top: 3.75rem;
+      width: 5rem;
+    }
+
+    @include responsive(tb) {
+    }
+
+    @include responsive(pc) {
+      top: 4.5rem;
+      width: 6rem;
+    }
+  }
+}

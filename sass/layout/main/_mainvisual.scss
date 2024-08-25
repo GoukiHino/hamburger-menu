@@ -1,0 +1,24 @@
+@use "../../setting/mixin" as m;
+
+.mainvisual {
+
+  .catch-copy {
+    display: flex;
+    align-items: center;
+
+    @include m.responsive(sp) {
+      height: 50vh;
+      padding: 3rem 0;
+      font-size: 4.5rem;
+    }
+
+    @include m.responsive(tb) {
+    }
+
+    @include m.responsive(pc) {
+      height: 80vh;
+      padding: 6rem 0;
+      font-size: 12rem;
+    }
+  }
+}
